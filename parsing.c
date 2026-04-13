@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/13 10:56:07 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/13 11:25:30 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_is_duplicate(t_node *stack, int n)
 	return (0);
 }
 
-long ft_atoi_ps(char *str)
+long	ft_atoi_ps(char *str)
 {
 	long	result;
 	int		sign;

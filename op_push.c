@@ -6,7 +6,7 @@
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:52 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/03/07 18:12:09 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/11 01:35:18 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@ void	push(t_stack **dest, t_stack **src)
 {
 	t_node	*tmp;
 
-	if (!*src)
+	if (!src || !*src)
 		return ;
 	tmp = *src;
-	*src = (*src)->next;
+	*src = tmp->next;
+	if (*src)
+		(*src)->prev = NULL;
 	tmp->next = *dest;
+	tmp->prev = NULL;
+	if (*dest)
+		(*dest)->prev = tmp;
 	*dest = tmp;
 }
 

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/15 23:15:26 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/15 23:23:04 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ long	ft_atoi_ps(char *str)
 	{
 		result = result * 10 + (*str - '0');
 		if (sign == 1 && result > (long)INT_MAX)
-			return (-1);
+			error(); // need to do later lesy
 		if (sign == -1 && - result < (long)INT_MIN)
-			return (-1);
+			error();
 		str++;
 	}
 	return (sign * result);

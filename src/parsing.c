@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/15 22:42:22 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/15 23:15:26 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@ int	ft_is_number(char *str)
 	int	i;
 
 	i = 0;
-	if (!str)
+	if (!str || !str[i])
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
-		return (1);
-	while (str)
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[1])
 	{
 		if (str[i] > '0' && str[i] < '9')
 			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	ft_is_duplicate(t_stack *stack, int n)
@@ -70,6 +72,6 @@ long	ft_atoi_ps(char *str)
 	return (sign * result);
 }
 
-void	ft_parse_args(t_node **stack_a, char **av)
+void	ft_parse_args(t_stack **stack_a, char **av)
 {
 }

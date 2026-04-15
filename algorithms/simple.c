@@ -6,20 +6,40 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/15 11:21:46 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/15 13:11:25 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    find_mind_index(t_stack **a)
+int find_min_index(t_stack *a)
 {
+    int min;
+    int i;
+    int min_i;
     
+    min = a->value;
+    i = 0;
+    min_i = 0;
+    while (a)
+    {
+        if (a->value < min)
+        {
+            min = a->value;
+            min_i = i;
+        }
+        a = a->next;
+        i++;
+    }
+    return i;
 }
 
 void    bring_min_to_top(t_stack **a)
 {
-    int min_index = find_min_index(*a);
-    int size = ft_stack_size(*a);
-
+    int min_index;
+    int size;
+    int steps;
+    
+    min_index = find_min_index(*a);
+    size = ft_stack_size(*a);
     if (min_index <= size / 2)
     {
         while (min_index-- > 0)
@@ -27,7 +47,7 @@ void    bring_min_to_top(t_stack **a)
     }
     else
     {
-        int steps = size - min_index;
+        steps = size - min_index;
         while (steps-- > 0)
             rra(a);
     }

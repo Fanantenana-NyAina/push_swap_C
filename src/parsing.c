@@ -30,7 +30,7 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int	ft_is_duplicate(t_node *stack, int n)
+int	ft_is_duplicate(t_stack *stack, int n)
 {
 	if (!stack)
 		return (0);

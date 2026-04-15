@@ -6,7 +6,7 @@
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:29:04 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/11 01:33:34 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/14 16:55:14 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rotate(t_stack **stack)
 {
-	t_node	*first;
-	t_node	*last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;

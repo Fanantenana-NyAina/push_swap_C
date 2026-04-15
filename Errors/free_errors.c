@@ -1,24 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_errors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/14 16:55:09 by tsirakot         ###   ########.fr       */
+/*   Created: 2026/03/04 12:28:23 by tsirakot          #+#    #+#             */
+/*   Updated: 2026/04/14 16:55:30 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
-typedef struct s_stack
-{
-	int				value;
-	int				index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}					t_stack;
-
-#endif

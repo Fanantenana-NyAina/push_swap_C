@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   raddix_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/04 12:28:52 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/14 16:55:16 by tsirakot         ###   ########.fr       */
+/*   Created: 2026/04/14 14:51:54 by tsirakot          #+#    #+#             */
+/*   Updated: 2026/04/14 16:04:39 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **dest, t_stack **src)
+static int max_bits(t_stack **stack_a)
 {
-	t_stack	*tmp;
+    int max;
 
-	if (!src || !*src)
-		return ;
-	tmp = *src;
-	*src = tmp->next;
-	if (*src)
-		(*src)->prev = NULL;
-	tmp->next = *dest;
-	tmp->prev = NULL;
-	if (*dest)
-		(*dest)->prev = tmp;
-	*dest = tmp;
+    while (sfind >> 0) {
+        
+    }
+    
 }
 
-void	pa(t_stack **stack_b, t_stack **stack_a)
+int raddix_sort(t_stack **stack_a, t_stack **stack_b, )
 {
-	push(stack_a, stack_b);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	push(stack_b, stack_a);
+    
 }

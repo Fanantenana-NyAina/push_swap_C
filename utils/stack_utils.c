@@ -6,17 +6,17 @@
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:27:25 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/11 01:31:45 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/14 16:55:08 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_stack_new(int value)
+t_stack	*ft_stack_new(int value)
 {
-	t_node	*new;
+	t_stack	*new;
 
-	new = malloc(sizeof(t_node));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->value = value;
@@ -26,7 +26,7 @@ t_node	*ft_stack_new(int value)
 	return (new);
 }
 
-t_node	*ft_stack_last(t_node *lst)
+t_stack	*ft_stack_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -35,9 +35,9 @@ t_node	*ft_stack_last(t_node *lst)
 	return (lst);
 }
 
-void	ft_stack_add_back(t_node **lst, t_node *new)
+void	ft_stack_add_back(t_stack **lst, t_stack *new)
 {
-	t_node	*last;
+	t_stack	*last;
 
 	if (!lst || !new)
 		return ;
@@ -51,7 +51,7 @@ void	ft_stack_add_back(t_node **lst, t_node *new)
 	new->prev = last;
 }
 
-int	ft_stack_size(t_node *lst)
+int	ft_stack_size(t_stack *lst)
 {
 	int	i;
 

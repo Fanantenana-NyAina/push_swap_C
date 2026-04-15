@@ -6,7 +6,7 @@
 /*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:38 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/11 01:32:41 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/14 16:55:13 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap(t_stack **stack)
 {
-	t_node	*first;
-	t_node	*second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;

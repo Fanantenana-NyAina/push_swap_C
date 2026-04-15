@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/14 16:55:09 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:45:06 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_stack
+# include <limits.h>
+
+typedef struct s_node
 {
 	int				value;
 	int				index;

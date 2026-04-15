@@ -6,9 +6,11 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/15 13:12:46 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/15 13:26:45 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int find_min_index(t_stack *a)
 {
@@ -57,7 +59,7 @@ void    selection_sort(t_stack **a, t_stack **b)
 {
     while (*a)
     {
-        bring_min_to_front(a);
+        bring_min_to_top(a);
         pb(a, b);
     }
     while (*b)

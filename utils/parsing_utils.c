@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 01:17:58 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 01:57:59 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	ft_is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] > '0' && str[i] < '9')
-			return (1);
+		if (str[i] < '0' && str[i] > '9')
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_is_duplicate(t_stack *stack, int n)

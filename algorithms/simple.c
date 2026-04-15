@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/15 13:26:45 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/15 17:09:25 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int find_min_index(t_stack *a)
         a = a->next;
         i++;
     }
-    return i;
+    return min_i;
 }
 
 void    bring_min_to_top(t_stack **a)

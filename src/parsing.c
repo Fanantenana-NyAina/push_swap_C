@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/03/07 04:07:02 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/15 18:14:33 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_is_duplicate(t_node *stack, int n)
 	{
 		if (stack->value == n)
 			return (1);
-		sack = stack->next;
+		stack = stack->next;
 	}
 	return (0);
 }

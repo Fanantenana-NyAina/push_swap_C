@@ -6,13 +6,13 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 07:37:31 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 08:21:40 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "flags.h"
-#include "algo.h"
+#include "algorithms.h"
 
 static int	is_sorted(t_stack *stack)
 {

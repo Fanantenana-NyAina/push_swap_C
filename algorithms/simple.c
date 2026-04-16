@@ -6,13 +6,13 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/15 17:09:25 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 07:30:16 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_min_index(t_stack *a)
+static int find_min_index(t_stack *a)
 {
     int min;
     int i;
@@ -34,7 +34,7 @@ int find_min_index(t_stack *a)
     return min_i;
 }
 
-void    bring_min_to_top(t_stack **a)
+static void    bring_min_to_top(t_stack **a)
 {
     int min_index;
     int size;
@@ -55,7 +55,7 @@ void    bring_min_to_top(t_stack **a)
     }
 }
 
-void    selection_sort(t_stack **a, t_stack **b)
+void    simple_selection_sort(t_stack **a, t_stack **b)
 {
     while (*a)
     {

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 06:08:33 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 06:59:30 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
 	}

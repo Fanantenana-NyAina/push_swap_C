@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:25:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 06:04:39 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 06:50:18 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef enum e_flag
 	BENCH
 }	t_flag;
 
-t_flag	get_flag(char **argv);
+t_flag  get_flag(char **argv, int *start);
 int		is_flag(char *str);
 
 #endif

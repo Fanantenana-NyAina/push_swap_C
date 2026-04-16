@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 06:07:02 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 06:50:59 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,25 @@ int	is_flag(char *str)
 	return (0);
 }
 
-t_flag	get_flag(char **argv)
+t_flag  get_flag(char **argv, int *start)
 {
-	int		i;
-	t_flag	flag;
+    int     i;
+    t_flag  flag;
 
-	i = 1;
-	flag = NONE;
-	while (argv[i])
-	{
-		if (!ft_strncmp(argv[i], "--simple", 8))
-			flag = SIMPLE;
-		else if (!ft_strncmp(argv[i], "--medium", 8))
-			flag = MEDIUM;
-		else if (!ft_strncmp(argv[i], "--complex", 9))
-			flag = COMPLEX;
-		else if (!ft_strncmp(argv[i], "--adaptive", 10))
-			flag = ADAPTIVE;
-		else if (!ft_strncmp(argv[i], "--bench", 7))
-			flag = BENCH;
-		i++;
-	}
-	if (flag == NONE)
-		flag = ADAPTIVE;
-	return (flag);
+    i = 1;
+    flag = ADAPTIVE;
+    while (argv[i] && is_flag(argv[i]))
+    {
+        if (!ft_strncmp(argv[i], "--simple", 8))
+            flag = SIMPLE;
+        else if (!ft_strncmp(argv[i], "--medium", 8))
+            flag = MEDIUM;
+        else if (!ft_strncmp(argv[i], "--complex", 9))
+            flag = COMPLEX;
+        else if (!ft_strncmp(argv[i], "--adaptive", 10))
+            flag = ADAPTIVE;
+        i++;
+    }
+    *start = i;
+    return (flag);
 }

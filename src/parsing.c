@@ -6,12 +6,13 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/16 06:49:15 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/16 08:05:34 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include "flags.h"
 
 static void	treating_stack(t_stack **stack_a, char *str)
 {
@@ -23,20 +24,20 @@ static void	treating_stack(t_stack **stack_a, char *str)
 	num = ft_atoi_ps(str);
 	if (ft_is_duplicate(*stack_a, (int)num))
 		error();
-	node = new_node((int)num);
+	node = ft_stack_new((int)num);
 	if (!node)
 		error();
 	ft_stack_add_back(stack_a, node);
 }
 
-static void	handle_split(t_stack **stack_a, char **split)
+static void	handle_split(t_stack **stack_a, char **splited)
 {
 	int	j;
 
 	j = 0;
-	while (split[j])
+	while (splited[j])
 	{
-		treating_stack(stack_a, split[j]);
+		treating_stack(stack_a, splited[j]);
 		j++;
 	}
 }
@@ -59,8 +60,13 @@ void	ft_parse_args(t_stack **stack_a, char **av)
 	i = 1;
 	while (av[i])
 	{
+		if (is_flag(av[i]))
+		{
+			i++;
+			continue ;
+		}
 		splited = ft_split(av[i], ' ');
-		if (!splited)
+		if (!splited || !splited[0])
 			error();
 		handle_split(stack_a, splited);
 		freeing_all(splited);

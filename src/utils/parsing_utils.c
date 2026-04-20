@@ -6,11 +6,12 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 06:59:30 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/20 11:32:21 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "error_handling.h"
 
 int	ft_is_number(char *str)
 {
@@ -64,9 +65,9 @@ long	ft_atoi_ps(char *str)
 	{
 		result = result * 10 + (*str - '0');
 		if (sign == 1 && result > (long)INT_MAX)
-			error(); // need to do later lesy
+			error_overflow();
 		if (sign == -1 && - result < (long)INT_MIN)
-			error();
+			error_overflow();
 		str++;
 	}
 	return (sign * result);

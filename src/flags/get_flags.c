@@ -6,12 +6,13 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 06:50:59 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/20 12:00:05 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "flags.h"
 #include "libft.h"
+#include "error_handling.h"
 
 int	is_flag(char *str)
 {
@@ -45,6 +46,8 @@ t_flag  get_flag(char **argv, int *start)
             flag = COMPLEX;
         else if (!ft_strncmp(argv[i], "--adaptive", 10))
             flag = ADAPTIVE;
+        else
+            error_flag();
         i++;
     }
     *start = i;

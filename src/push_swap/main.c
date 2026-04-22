@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 08:21:40 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:36:59 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main(int argc, char **argv)
     t_stack *b;
     t_flag  flag;
     int     start;
+    double  disorder;
 
     a = NULL;
     b = NULL;
@@ -52,6 +53,7 @@ int main(int argc, char **argv)
     ft_parse_args(&a, argv + start - 1);
     if (is_sorted(a))
         return (free_stack(&a), 0);
+    disorder = count_disorder(a);
     if (flag == SIMPLE)
         simple_selection_sort(&a, &b);
     else if (flag == MEDIUM)
@@ -61,5 +63,6 @@ int main(int argc, char **argv)
     else
         adaptive_sort(&a); // need to fix later according to what we will gonna do
     free_stack(&a);
+    free_stack(&b);
     return (0);
 }

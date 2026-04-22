@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/20 12:04:03 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/22 09:30:19 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,45 @@ long	ft_atoi_ps(char *str)
 		str++;
 	}
 	return (sign * result);
+}
+
+double	count_disorder(t_stack *a)
+{
+	long	mistakes;
+	long	total_pair;
+	int		i;
+	int		j;
+	int		size;
+	t_stack	*tmp;
+	int		*arr;
+
+	size = ft_stack_size(a);
+	arr = malloc(sizeof(int) * size);
+	if (!arr)
+		error_malloc();
+	tmp = a;
+	i = 0;
+	while (tmp)
+	{
+		arr[i] = tmp -> value;
+		i++;
+		tmp = tmp -> next;
+	}
+	mistakes = 0;
+	total_pair = 0;
+	i = 0;
+	while (i < size - 1)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			total_pair++;
+			if (arr[i] > arr[j])
+				mistakes++;
+			j++;
+		}
+		i++;
+	}
+	free(arr);
+	return ((double) mistakes / (double) total_pair);
 }

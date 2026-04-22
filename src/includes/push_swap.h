@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/20 11:19:54 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:35:39 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	pb(t_stack **stack_a, t_stack **stack_b);
 int	ft_is_number(char *str);
 int	ft_is_duplicate(t_stack *stack, int n);
 void	ft_parse_args(t_stack **stack_a, char **av);
+double	count_disorder(t_stack *a);
 
 #endif

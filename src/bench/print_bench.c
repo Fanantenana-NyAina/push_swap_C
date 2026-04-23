@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:27:14 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 09:23:04 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:37:08 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    print_bench(t_flag flag, double disorder, int ops)
         ft_putstr_fd("[bench] strategy: Complex / O(nlogn)\n", 2);
     else
         ft_putstr_fd("[bench] strategy: Adaptive\n", 2);
-    print_disorder_fd(count_disorder(disorder));
+    print_disorder_fd(disorder);
     ft_putstr_fd("[bench] total_ops: ", 2);
     ft_putnbr_fd(ops, 2);
     write(2, "\n", 1);

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/16 07:30:16 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:49:57 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,21 @@ static void    bring_min_to_top(t_stack **a)
     }
 }
 
-void    simple_selection_sort(t_stack **a, t_stack **b)
+int    simple_selection_sort(t_stack **a, t_stack **b)
 {
+    int ops;
+
+    ops = 0;
     while (*a)
     {
         bring_min_to_top(a);
         pb(a, b);
+        ops++;
     }
     while (*b)
+    {
         pa(a, b);
+        ops++;
+    }
+    return (ops);
 }

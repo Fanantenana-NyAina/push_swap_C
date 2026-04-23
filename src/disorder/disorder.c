@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 09:54:42 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/22 09:54:58 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:22:45 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static long    count_mistakes(int *arr, int size)
     return (mistakes);
 }
 
-double    compute_disorder(t_stack *a)
+double  count_disorder(t_stack *a)
 {
     int     size;
     int     *arr;
@@ -71,4 +71,18 @@ double    compute_disorder(t_stack *a)
     disorder = (double)mistakes / (double)total_pairs;
     free(arr);
     return (disorder);
+}
+
+void    print_disorder_fd(double disorder)
+{
+    int    integer;
+    int    decimal;
+
+    integer = (int)(disorder * 100);
+    decimal = (int)((disorder * 100 - integer) * 100);
+    ft_putstr_fd("[bench] disorder: ", 2);
+    ft_putnbr_fd(integer, 2);
+    write(2, ".", 1);
+    ft_putnbr_fd(decimal, 2);
+    ft_putstr_fd("%\n", 2);
 }

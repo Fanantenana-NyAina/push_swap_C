@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/20 13:35:39 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:19:01 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <limits.h>
 # include <stdlib.h>
+# include "flags.h"
+# include "libft.h"
+# include "disorder.h"
 
 typedef struct s_stack
 {

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/23 11:58:48 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:52:09 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct n_ops
 	int 		rra;
 	int			rrb;
 	int			rrr;
-	struct n_ops value;
 }					t_ops;
 
 t_stack	*ft_stack_new(int value);

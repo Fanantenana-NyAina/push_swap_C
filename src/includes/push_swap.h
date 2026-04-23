@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/23 09:58:28 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/23 11:58:48 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,23 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;
+
+typedef struct n_ops
+{
+	int			sa;
+	int			sb;
+	int			ss;
+	int			pa;
+	int			pb;
+	int			ra;
+	int			rb;
+	int			rr;
+	int			ra;
+	int 		rra;
+	int			rrb;
+	int			rrr;
+	struct n_ops value;
+}					t_ops;
 
 t_stack	*ft_stack_new(int value);
 t_stack	*ft_stack_last(t_stack *lst);

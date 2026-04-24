@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 09:49:57 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/24 10:31:50 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int find_min_index(t_stack *a)
     return min_i;
 }
 
-static void    bring_min_to_top(t_stack **a)
+static void    bring_min_to_top(t_stack **a, t_ops *n_ops)
 {
     int min_index;
     int size;
@@ -45,31 +45,25 @@ static void    bring_min_to_top(t_stack **a)
     if (min_index <= size / 2)
     {
         while (min_index-- > 0)
-            ra(a);
+            ra(a, n_ops);
     }
     else
     {
         steps = size - min_index;
         while (steps-- > 0)
-            rra(a);
+            rra(a, n_ops);
     }
 }
 
-int    simple_selection_sort(t_stack **a, t_stack **b)
+void    simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops)
 {
-    int ops;
-
-    ops = 0;
     while (*a)
     {
-        bring_min_to_top(a);
-        pb(a, b);
-        ops++;
+        bring_min_to_top(a, n_ops);
+        pb(a, b, n_ops);
     }
     while (*b)
-    {
-        pa(a, b);
-        ops++;
-    }
-    return (ops);
+        pa(a, b, n_ops);
+
+    return ;
 }

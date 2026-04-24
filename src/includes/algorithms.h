@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 07:30:24 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 09:55:12 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/24 10:22:21 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "push_swap.h"
 
-int    simple_selection_sort(t_stack **a, t_stack **b);
+int    simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
 
 #endif

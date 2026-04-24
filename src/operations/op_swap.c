@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:38 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/14 16:55:13 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/04/24 09:50:05 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,20 @@ void	swap(t_stack **stack)
 	*stack = second;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack **stack_a, t_ops *n_ops)
 {
 	swap(stack_a);
+	n_ops->sa++;
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **stack_b, t_ops *n_ops)
 {
 	swap(stack_b);
+	n_ops->sb++;
 }
 
-void	ss(t_stack **stack_a, t_stack stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
 {
-	sa(stack_a);
-	sb(stack_b);
+	sa(stack_a, n_ops);
+	sb(stack_b, n_ops);
 }

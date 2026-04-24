@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 10:03:45 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/24 10:35:36 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     t_stack *a;
     t_stack *b;
     t_flag  flag;
+    t_ops   n_ops;
     int     start;
     int     bench;
     double  disorder;
-    int     ops;
 
+    ft_memset(&n_ops, 0, sizeof(t_ops));
     a = NULL;
     b = NULL;
     if (argc < 2)
@@ -56,17 +57,16 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     if (is_sorted(a))
         return (free_stack(&a), 0);
     disorder = count_disorder(a);
-    ops = 0;
     if (flag == SIMPLE)
-        ops = simple_selection_sort(&a, &b);
+        simple_selection_sort(&a, &b, &n_ops);
     else if (flag == MEDIUM)
-        ops = medium_sort(&a); // need to fix later according to what we will gonna do
+        medium_sort(&a); // need to fix later according to what we will gonna do
     else if (flag == COMPLEX)
-        ops = complex_sort(&a); // need to fix later according to what we will gonna do
+        complex_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     else
-        ops = adaptive_sort(&a); // need to fix later according to what we will gonna do
+        adaptive_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     if (bench)
-        print_bench(flag, disorder, ops);
+        print_bench(flag, disorder, &n_ops);
     free_stack(&a);
     free_stack(&b);
     return (0);

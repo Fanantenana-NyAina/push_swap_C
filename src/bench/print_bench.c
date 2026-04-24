@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:27:14 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/24 10:04:43 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:39:56 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int total_ops(t_ops *n_ops)
 
     total_s_p = n_ops->sa + n_ops->sb + n_ops->ss + n_ops->pa + n_ops->pb;
     total_r = n_ops->ra + n_ops->rb + n_ops-> rr + n_ops->rra + n_ops->rrb + n_ops->rrr;
-
     return (total_s_p + total_r);
 }
 
@@ -74,9 +73,11 @@ void    print_bench(t_flag flag, double disorder, t_ops *n_ops)
         ft_putstr_fd("[bench] strategy: Complex / O(nlogn)\n", 2);
     else
         ft_putstr_fd("[bench] strategy: Adaptive\n", 2);
-    ft_putstr_fd("[bench] total_ops: ", 2);
+    ft_putstr_fd("[bench] total_ops:    ", 2);
     ft_putnbr_fd(total_ops(n_ops), 2);
+    write(2, "\n", 1);
     print_operations_s_p(n_ops);
+    write(2, "\n", 1);
     print_operations_r(n_ops);
     write(2, "\n", 1);
 }

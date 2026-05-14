@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/14 02:24:22 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/14 18:30:55 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,12 @@ void	simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops)
 	while (*b)
 		pa(a, b, n_ops);
 	return ;
+    while (*a)
+    {
+        bring_min_to_top(a, n_ops);
+        pb(a, b, n_ops);
+    }
+    while (*b)
+        pa(a, b, n_ops);
+    return ;
 }

@@ -16,10 +16,10 @@
 # include "push_swap.h"
 # include "libft.h"
 
-void    error_mess(char *mess);
-void    error_overflow();
-void    error_duplicate();
-void    error_malloc();
-void    error_flag();
+void	error_mess(char *mess);
+void	error_overflow(void);
+void	error_duplicate(void);
+void	error_malloc(void);
+void	error_flag(void);
 
 #endif

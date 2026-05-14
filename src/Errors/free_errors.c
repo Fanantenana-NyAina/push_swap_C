@@ -12,29 +12,29 @@
 
 #include "error_handling.h"
 
-void error_mess(char *mess)
+void	error_mess(char *mess)
 {
-    write(2, "ERROR:\n", 7);
-    write(2, mess, ft_strlen(mess));
-    exit(1);
+	write(2, "ERROR:\n", 7);
+	write(2, mess, ft_strlen(mess));
+	exit(1);
 }
 
-void    error_overflow(void)
+void	error_overflow(void)
 {
-    error_msg("integer overflow");
+	error_msg("integer overflow");
 }
 
-void    error_duplicate(void)
+void	error_duplicate(void)
 {
-    error_msg("duplicate value");
+	error_msg("duplicate value");
 }
 
-void    error_malloc(void)
+void	error_malloc(void)
 {
-    error_msg("malloc failed");
+	error_msg("malloc failed");
 }
 
-void    error_flag(void)
+void	error_flag(void)
 {
-    error_msg("unknown flag");
+	error_msg("unknown flag");
 }

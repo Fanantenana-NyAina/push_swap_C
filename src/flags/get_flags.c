@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 10:01:52 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/14 02:24:09 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "error_handling.h"
 #include "flags.h"
 #include "libft.h"
-#include "error_handling.h"
 
 int	is_flag(char *str)
 {
@@ -29,31 +29,31 @@ int	is_flag(char *str)
 	return (0);
 }
 
-t_flag  get_flag(char **argv, int *start, int bench)
+t_flag	get_flag(char **argv, int *start, int bench)
 {
-    int     i;
-    t_flag  flag;
+	int		i;
+	t_flag	flag;
 
-    i = 1;
-    flag = ADAPTIVE;
-    bench = 0;
-    while (argv[i] && is_flag(argv[i]))
-    {
-        if (!ft_strncmp(argv[i], "--simple", 8))
-            flag = SIMPLE;
-        else if (!ft_strncmp(argv[i], "--medium", 8))
-            flag = MEDIUM;
-        else if (!ft_strncmp(argv[i], "--complex", 9))
-            flag = COMPLEX;
-        else if (!ft_strncmp(argv[i], "--adaptive", 10))
-            flag = ADAPTIVE;
-        else if (!ft_strncmp(argv[i], "--bench", 7))
-            bench = 1;
-        // live code : new flag count only !!
-        else
-            error_flag();
-        i++;
-    }
-    *start = i;
-    return (flag);
+	i = 1;
+	flag = ADAPTIVE;
+	bench = 0;
+	while (argv[i] && is_flag(argv[i]))
+	{
+		if (!ft_strncmp(argv[i], "--simple", 8))
+			flag = SIMPLE;
+		else if (!ft_strncmp(argv[i], "--medium", 8))
+			flag = MEDIUM;
+		else if (!ft_strncmp(argv[i], "--complex", 9))
+			flag = COMPLEX;
+		else if (!ft_strncmp(argv[i], "--adaptive", 10))
+			flag = ADAPTIVE;
+		else if (!ft_strncmp(argv[i], "--bench", 7))
+			bench = 1;
+		// live code : new flag count only !!
+		else
+			error_flag();
+		i++;
+	}
+	*start = i;
+	return (flag);
 }

@@ -15,6 +15,6 @@
 
 # include "push_swap.h"
 
-int    simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
+int	simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
 
 #endif

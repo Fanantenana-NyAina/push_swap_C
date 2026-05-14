@@ -15,7 +15,7 @@
 
 # include "push_swap.h"
 
-void    print_disorder_fd(double disorder);
-double  count_disorder(t_stack *a);
+void	print_disorder_fd(double disorder);
+double	count_disorder(t_stack *a);
 
 #endif

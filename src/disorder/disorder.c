@@ -12,77 +12,77 @@
 
 #include "push_swap.h"
 
-static int    *stack_to_arr(t_stack *a, int size)
+static int	*stack_to_arr(t_stack *a, int size)
 {
-    int     *arr;
-    int     i;
-    t_stack *tmp;
+	int		*arr;
+	int		i;
+	t_stack	*tmp;
 
-    arr = malloc(sizeof(int) * size);
-    if (!arr)
-        error_malloc();
-    tmp = a;
-    i = 0;
-    while (tmp)
-    {
-        arr[i] = tmp->value;
-        i++;
-        tmp = tmp->next;
-    }
-    return (arr);
+	arr = malloc(sizeof(int) * size);
+	if (!arr)
+		error_malloc();
+	tmp = a;
+	i = 0;
+	while (tmp)
+	{
+		arr[i] = tmp->value;
+		i++;
+		tmp = tmp->next;
+	}
+	return (arr);
 }
 
-static long    count_mistakes(int *arr, int size)
+static long	count_mistakes(int *arr, int size)
 {
-    long    mistakes;
-    int     i;
-    int     j;
+	long	mistakes;
+	int		i;
+	int		j;
 
-    mistakes = 0;
-    i = 0;
-    while (i < size - 1)
-    {
-        j = i + 1;
-        while (j < size)
-        {
-            if (arr[i] > arr[j])
-                mistakes++;
-            j++;
-        }
-        i++;
-    }
-    return (mistakes);
+	mistakes = 0;
+	i = 0;
+	while (i < size - 1)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] > arr[j])
+				mistakes++;
+			j++;
+		}
+		i++;
+	}
+	return (mistakes);
 }
 
-double  count_disorder(t_stack *a)
+double	count_disorder(t_stack *a)
 {
-    int     size;
-    int     *arr;
-    long    mistakes;
-    long    total_pairs;
-    double  disorder;
+	int		size;
+	int		*arr;
+	long	mistakes;
+	long	total_pairs;
+	double	disorder;
 
-    size = ft_stack_size(a);
-    if (size <= 1)
-        return (0.0);
-    arr = stack_to_arr(a, size);
-    total_pairs = (long)size * (size - 1) / 2;
-    mistakes = count_mistakes(arr, size);
-    disorder = (double)mistakes / (double)total_pairs;
-    free(arr);
-    return (disorder);
+	size = ft_stack_size(a);
+	if (size <= 1)
+		return (0.0);
+	arr = stack_to_arr(a, size);
+	total_pairs = (long)size * (size - 1) / 2;
+	mistakes = count_mistakes(arr, size);
+	disorder = (double)mistakes / (double)total_pairs;
+	free(arr);
+	return (disorder);
 }
 
-void    print_disorder_fd(double disorder)
+void	print_disorder_fd(double disorder)
 {
-    int    integer;
-    int    decimal;
+	int	integer;
+	int	decimal;
 
-    integer = (int)(disorder * 100);
-    decimal = (int)((disorder * 100 - integer) * 100);
-    ft_putstr_fd("[bench] disorder: ", 2);
-    ft_putnbr_fd(integer, 2);
-    write(2, ".", 1);
-    ft_putnbr_fd(decimal, 2);
-    ft_putstr_fd("%\n", 2);
+	integer = (int)(disorder * 100);
+	decimal = (int)((disorder * 100 - integer) * 100);
+	ft_putstr_fd("[bench] disorder: ", 2);
+	ft_putnbr_fd(integer, 2);
+	write(2, ".", 1);
+	ft_putnbr_fd(decimal, 2);
+	ft_putstr_fd("%\n", 2);
 }

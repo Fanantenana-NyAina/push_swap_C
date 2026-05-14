@@ -44,12 +44,12 @@ static void	handle_split(t_stack **stack_a, char **splited)
 
 static void	freeing_all(char **split)
 {
-    int i;
-	
+	int	i;
+
 	i = 0;
-    while (split[i])
-        free(split[i++]);
-    free(split);
+	while (split[i])
+		free(split[i++]);
+	free(split);
 }
 
 void	ft_parse_args(t_stack **stack_a, char **av)

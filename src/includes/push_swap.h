@@ -38,7 +38,7 @@ typedef struct n_ops
 	int			rb;
 	int			rr;
 	int			ra;
-	int 		rra;
+	int			rra;
 	int			rrb;
 	int			rrr;
 }					t_ops;
@@ -46,7 +46,7 @@ typedef struct n_ops
 t_stack	*ft_stack_new(int value);
 t_stack	*ft_stack_last(t_stack *lst);
 void	ft_stack_add_back(t_stack **lst, t_stack *new);
-int	ft_stack_size(t_stack *lst);
+int		ft_stack_size(t_stack *lst);
 void	swap(t_stack **stack);
 void	sa(t_stack **stack_a, t_ops *n_ops);
 void	sb(t_stack **stack_b, t_ops *n_ops);
@@ -62,9 +62,9 @@ void	rrr(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops);
 void	push(t_stack **dest, t_stack **src);
 void	pa(t_stack **stack_b, t_stack **stack_a, t_ops *n_ops);
 void	pb(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops);
-int	ft_is_number(char *str);
-int	ft_is_duplicate(t_stack *stack, int n);
+int		ft_is_number(char *str);
+int		ft_is_duplicate(t_stack *stack, int n);
 void	ft_parse_args(t_stack **stack_a, char **av);
-void    print_bench(t_flag flag, double disorder, t_ops *ops);
+void	print_bench(t_flag flag, double disorder, t_ops *ops);
 
 #endif

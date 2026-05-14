@@ -27,8 +27,10 @@ int	ft_is_number(char *str)
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
+		{
 			error_mess("not a number!");
 			return (0);
+		}
 		i++;
 	}
 	return (1);

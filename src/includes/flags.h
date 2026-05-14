@@ -22,7 +22,7 @@ typedef enum e_flag
 	ADAPTIVE,
 }	t_flag;
 
-t_flag  get_flag(char **argv, int *start, int bench);
+t_flag	get_flag(char **argv, int *start, int bench);
 int		is_flag(char *str);
 
 #endif

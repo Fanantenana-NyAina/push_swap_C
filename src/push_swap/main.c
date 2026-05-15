@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/14 18:35:51 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/15 09:09:37 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     else if (flag == COMPLEX)
         complex_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     else
-        adaptive_sort() // need to fix later according to what we will gonna do
+        adaptive_sort(&a, &b, disorder, &n_ops); // need to fix later according to what we will gonna do
     if (bench)
         print_bench(flag, disorder, &n_ops);
     free_stack(&a);

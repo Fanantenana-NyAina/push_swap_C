@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 07:30:24 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/14 18:31:08 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/15 09:09:11 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include "push_swap.h"
 
-int	simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
-int    simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
-void   adaptive_sort(t_stack **a, t_stack **b, double disorder, t_ops *ops);
+void    simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops);
+void    ft_chunk(t_stack **a, t_stack **b, t_ops n_ops);
+void    raddix_sort(t_stack **a, t_stack **b, t_ops *n_ops);
+void    adaptive_sort(t_stack **a, t_stack **b, double disorder, t_ops *ops);
 
 #endif

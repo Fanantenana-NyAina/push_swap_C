@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:38 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/24 09:50:05 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 23:51:05 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ void	swap(t_stack **stack)
 void	sa(t_stack **stack_a, t_ops *n_ops)
 {
 	swap(stack_a);
+	write(1, "sa\n", 3);
 	n_ops->sa++;
 }
 
 void	sb(t_stack **stack_b, t_ops *n_ops)
 {
 	swap(stack_b);
+	write(1, "sb\n", 3);
 	n_ops->sb++;
 }
 
@@ -46,4 +48,6 @@ void	ss(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
 {
 	sa(stack_a, n_ops);
 	sb(stack_b, n_ops);
+	n_ops->ss++;
+	write(1, "ss\n", 3);
 }

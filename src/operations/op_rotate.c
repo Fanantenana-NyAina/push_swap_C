@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:29:04 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/24 09:47:24 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 23:50:35 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ void	ra(t_stack **stack_a, t_ops *n_ops)
 {
 	rotate(stack_a);
 	n_ops->ra++;
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **stack_b, t_ops *n_ops)
 {
 	rotate(stack_b);
 	n_ops->rb++;
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
@@ -47,4 +49,5 @@ void	rr(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
 	ra(stack_a, n_ops);
 	rb(stack_b, n_ops);
 	n_ops->rr++;
+	write(1, "rr\n", 3);
 }

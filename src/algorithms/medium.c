@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 13:40:31 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/14 18:13:51 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:44:44 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	get_position(t_stack *stack, t_stack *target)
 	return (-1);
 }
 
-static void	bring_max_to_top(t_stack **b, t_ops n_ops)
+static void	bring_max_to_top(t_stack **b, t_ops *n_ops)
 {
 	t_stack	*max;
 	int		pos;
@@ -63,7 +63,7 @@ static int	get_chunk_size(int size)
 	return (15);
 }
 
-static void	push_chunks_to_b(t_stack **a, t_stack **b, int chunk, t_ops n_ops)
+static void	push_chunks_to_b(t_stack **a, t_stack **b, int chunk, t_ops *n_ops)
 {
 	int	next_target;
 
@@ -88,7 +88,7 @@ static void	push_chunks_to_b(t_stack **a, t_stack **b, int chunk, t_ops n_ops)
 	}
 }
 
-void	ft_chunk(t_stack **a, t_stack **b, t_ops n_ops)
+void	ft_chunk(t_stack **a, t_stack **b, t_ops *n_ops)
 {
 	int	size;
 	int	chunk;

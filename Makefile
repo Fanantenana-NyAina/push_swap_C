@@ -5,33 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/03/02 22:15:14 by tsirakot          #+#    #+#              #
-#    Updated: 2026/05/15 14:03:17 by fananrak         ###   ########.fr        #
+#    Created: 2026/05/16 18:56:37 by fananrak          #+#    #+#              #
+#    Updated: 2026/05/16 19:57:45 by fananrak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = push_swap
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
-SRCS    = src/main.c \
-          src/parsing.c \
-          src/bench.c \
-          src/disorder.c \
-          utils/parsing_utils.c \
-          utils/stack_utils.c \
-          utils/find_max_min.c \
-          operations/op_swap.c \
-          operations/op_push.c \
-          operations/op_rotate.c \
-          operations/op_rev_rotate.c \
-          flags/get_flags.c \
-          Errors/free_errors.c \
-          algorithms/simple.c \
-          algorithms/medium.c \
-          algorithms/raddix_sort.c \
-          algorithms/adaptive.c
+SRCS    = src/push_swap/main.c \
+          src/push_swap/parsing.c \
+          src/bench/print_bench.c \
+          src/disorder/disorder.c \
+          src/utils/parsing_utils.c \
+          src/utils/stack_utils.c \
+          src/utils/find_max_min.c \
+          src/operations/op_swap.c \
+          src/operations/op_push.c \
+          src/operations/op_rotate.c \
+          src/operations/op_rev_rotate.c \
+          src/flags/get_flags.c \
+          src/Errors/free_errors.c \
+          src/algorithms/simple.c \
+          src/algorithms/medium.c \
+          src/algorithms/radix_sort.c \
+          src/algorithms/adaptative.c
 OBJS    = $(SRCS:.c=.o)
 LIBFT   = libft/libft.a
+INCLUDES = -I src/includes -I libft
 
 all: $(NAME)
 
@@ -39,7 +40,10 @@ $(LIBFT):
 	make -C libft
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -51,4 +55,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re

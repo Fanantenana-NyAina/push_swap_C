@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/14 02:24:09 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:14:35 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error_handling.h"
-#include "flags.h"
-#include "libft.h"
+#include "push_swap.h"
 
 int	is_flag(char *str)
 {

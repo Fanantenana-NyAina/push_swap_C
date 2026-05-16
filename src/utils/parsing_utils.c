@@ -6,12 +6,11 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/22 09:54:46 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:33:15 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "error_handling.h"
 
 int	ft_is_number(char *str)
 {
@@ -52,7 +51,7 @@ int	ft_is_duplicate(t_stack *stack, int n)
 	return (0);
 }
 
-long	ft_atoi_ps(char *str)
+long	atoi_ps(char *str)
 {
 	long	result;
 	int		sign;

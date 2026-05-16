@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 06:46:18 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/14 16:57:57 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:50:27 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	run_sort(t_stack **a, t_stack **b, t_ops *n_ops, t_flag flag)
 	else if (flag == COMPLEX)
 		raddix_sort(a, b, *n_ops);
 	else
-		adaptive_sort(a, b, n_ops);
+		adaptive_sort(a, b, *n_ops);
 }
 
 static void	run_benchmark(int bench, t_flag flag, double disorder, t_ops *n_ops)

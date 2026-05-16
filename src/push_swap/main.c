@@ -6,13 +6,11 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/15 13:39:51 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:21:55 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "flags.h"
-#include "algorithms.h"
 
 static int	is_sorted(t_stack *stack)
 {
@@ -47,6 +45,7 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     int     bench;
     double  disorder;
 
+    bench = 0;
     ft_memset(&n_ops, 0, sizeof(t_ops));
     a = NULL;
     b = NULL;
@@ -60,9 +59,9 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     if (flag == SIMPLE)
         simple_selection_sort(&a, &b, &n_ops);
     else if (flag == MEDIUM)
-        medium_sort(&a); // need to fix later according to what we will gonna do
+        ft_chunk(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     else if (flag == COMPLEX)
-        complex_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
+        radix_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     else
         adaptive_sort(&a, &b, disorder, &n_ops); // need to fix later according to what we will gonna do
     if (bench)

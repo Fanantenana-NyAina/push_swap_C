@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raddix_sort.c                                      :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:51:54 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/14 18:16:43 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:13:44 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	make_index(t_stack **stack_a)
 	if (!stack_a || !*stack_a)
 		return (0);
 	size = ft_stack_size(*stack_a);
-	if (siz <= 0)
+	if (size <= 0)
 		return (0);
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
@@ -98,7 +98,7 @@ int	make_index(t_stack **stack_a)
 	return (0);
 }
 
-void	raddix_sort(t_stack **stack_a, t_stack **stack_b, t_ops n_ops)
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
 {
 	int	size;
 	int	bits;

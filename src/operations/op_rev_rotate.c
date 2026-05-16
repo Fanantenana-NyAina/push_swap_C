@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:29:14 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/24 09:45:43 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:49:11 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rra(t_stack **stack_a, t_ops *n_ops)
 void	rrb(t_stack **stack_b, t_ops *n_ops)
 {
 	rev_rotate(stack_b);
-	n_ops->rrb;
+	n_ops->rrb++;
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)

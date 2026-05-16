@@ -6,11 +6,11 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:23 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/20 11:39:14 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:54:44 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error_handling.h"
+#include "push_swap.h"
 
 void	error_mess(char *mess)
 {
@@ -21,20 +21,20 @@ void	error_mess(char *mess)
 
 void	error_overflow(void)
 {
-	error_msg("integer overflow");
+	error_mess("integer overflow");
 }
 
 void	error_duplicate(void)
 {
-	error_msg("duplicate value");
+	error_mess("duplicate value");
 }
 
 void	error_malloc(void)
 {
-	error_msg("malloc failed");
+	error_mess("malloc failed");
 }
 
 void	error_flag(void)
 {
-	error_msg("unknown flag");
+	error_mess("unknown flag");
 }

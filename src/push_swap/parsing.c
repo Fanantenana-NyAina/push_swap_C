@@ -6,27 +6,23 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/04/16 08:05:34 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:32:16 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "flags.h"
 
 static void	treating_stack(t_stack **stack_a, char *str)
 {
 	long	num;
 	t_stack	*node;
 
-	if (!ft_is_number(str))
-		error();
-	num = ft_atoi_ps(str);
-	if (ft_is_duplicate(*stack_a, (int)num))
-		error();
+	ft_is_number(str);
+	num = atoi_ps(str);
+	ft_is_duplicate(*stack_a, (int)num);
 	node = ft_stack_new((int)num);
 	if (!node)
-		error();
+		error_malloc();
 	ft_stack_add_back(stack_a, node);
 }
 
@@ -67,7 +63,7 @@ void	ft_parse_args(t_stack **stack_a, char **av)
 		}
 		splited = ft_split(av[i], ' ');
 		if (!splited || !splited[0])
-			error();
+			error_mess("errror while spliting");
 		handle_split(stack_a, splited);
 		freeing_all(splited);
 		i++;

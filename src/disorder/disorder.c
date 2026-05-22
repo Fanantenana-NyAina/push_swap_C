@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 09:54:42 by fananrak          #+#    #+#             */
-/*   Updated: 2026/04/23 09:22:45 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:02:03 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	*stack_to_arr(t_stack *a, int size)
 
 	arr = malloc(sizeof(int) * size);
 	if (!arr)
-		error_malloc();
+		error();
 	tmp = a;
 	i = 0;
 	while (tmp)

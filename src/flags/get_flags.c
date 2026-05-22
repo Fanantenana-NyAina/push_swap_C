@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 18:55:04 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:02:40 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ t_flag	get_flag(char **argv, int *start, 	int *bench)
 			*bench = 1;
 		else if (is_exact(argv[i], "--adaptive"))
 			flag = ADAPTIVE;
-		// live code : new flag count only !!
 		else
-			error_flag();
+			error();
 		i++;
 	}
 	*start = i;

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:09 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/16 19:32:16 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:04:26 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	treating_stack(t_stack **stack_a, char *str)
 	ft_is_duplicate(*stack_a, (int)num);
 	node = ft_stack_new((int)num);
 	if (!node)
-		error_malloc();
+		error();
 	ft_stack_add_back(stack_a, node);
 }
 
@@ -63,7 +63,7 @@ void	ft_parse_args(t_stack **stack_a, char **av)
 		}
 		splited = ft_split(av[i], ' ');
 		if (!splited || !splited[0])
-			error_mess("errror while spliting");
+			error();
 		handle_split(stack_a, splited);
 		freeing_all(splited);
 		i++;

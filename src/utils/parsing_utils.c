@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 01:04:44 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/16 19:33:15 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:05:28 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_is_number(char *str)
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
-			error_mess("not a number!");
+			error();
 			return (0);
 		}
 		i++;
@@ -43,7 +43,7 @@ int	ft_is_duplicate(t_stack *stack, int n)
 	{
 		if (stack->value == n)
 		{
-			error_duplicate();
+			error();
 			return (1);
 		}
 		stack = stack->next;
@@ -70,9 +70,9 @@ long	atoi_ps(char *str)
 	{
 		result = result * 10 + (*str - '0');
 		if (sign == 1 && result > (long)INT_MAX)
-			error_overflow();
+			error();
 		if (sign == -1 && - result < (long)INT_MIN)
-			error_overflow();
+			error();
 		str++;
 	}
 	return (sign * result);

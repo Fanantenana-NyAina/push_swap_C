@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/22 19:39:56 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:01:18 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,6 @@ typedef struct s_program
 	double	disorder;
 }	t_program;
 
-typedef struct s_context
-{
-	t_stack			*a;
-	t_stack			*b;
-	t_flag			flag;
-	t_ops			n_ops;
-	int				start;
-	int				bench;
-	double			disorder;
-}					t_context;
-
 t_stack				*ft_stack_new(int value);
 t_stack				*ft_stack_last(t_stack *lst);
 void				ft_stack_add_back(t_stack **lst, t_stack *new);
@@ -108,14 +97,10 @@ t_flag    adaptive_sort(t_stack **a, t_stack **b, double disorder, t_ops *ops);
 void	print_disorder_fd(double disorder);
 double	count_disorder(t_stack *a);
 
-void	error_mess(char *mess);
-void	error_overflow(void);
-void	error_duplicate(void);
-void	error_malloc(void);
-void	error_flag(void);
+void	error();
 
 t_flag	get_flag(char **argv, int *start, int *bench);
 int		is_flag(char *str);
-int	make_index(t_stack **stack_a);
+int		make_index(t_stack **stack_a);
 
 #endif

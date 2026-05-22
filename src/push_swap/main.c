@@ -6,12 +6,11 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 19:27:28 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 19:42:08 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static int	is_sorted(t_stack *stack)
 {
@@ -36,54 +35,55 @@ static void	free_stack(t_stack **stack)
 	}
 }
 
-t_flag	run_sort(t_stack **a, t_stack **b, t_flag flag, double disorder, t_ops *n_ops)
+static void	init_program(t_program *p)
 {
-	if (flag == SIMPLE)
-	{
-		simple_selection_sort(a, b, n_ops);
-		return (SIMPLE);
-	}
-	else if (flag == MEDIUM)
-	{
-		ft_chunk(a, b, n_ops);
-		return (MEDIUM);
-	}
-	else if (flag == COMPLEX)
-	{
-		radix_sort(a, b, n_ops);
-		return (COMPLEX);
-	}
-	else
-		return (adaptive_sort(a, b, disorder, n_ops));
+	p->a = NULL;
+	p->b = NULL;
+	p->bench = 0;
+	p->start = 0;
+	p->disorder = 0;
+	ft_memset(&p->ops, 0, sizeof(t_ops));
 }
 
-int main(int argc, char **argv) // need to be refactor cuz it's too long i think
+static t_flag	run_sort(t_program *p)
 {
-    t_stack *a;
-    t_stack *b;
-    t_flag  flag;
-    t_flag  used_strategy;
-    t_ops   n_ops;
-    int     start;
-    int     bench;
-    double  disorder;
+	if (p->flag == SIMPLE)
+	{
+		simple_selection_sort(&p->a, &p->b, &p->ops);
+		return (SIMPLE);
+	}
+	if (p->flag == MEDIUM)
+	{
+		make_index(&p->a);
+		ft_chunk(&p->a, &p->b, &p->ops);
+		return (MEDIUM);
+	}
+	if (p->flag == COMPLEX)
+	{
+		make_index(&p->a);
+		radix_sort(&p->a, &p->b, &p->ops);
+		return (COMPLEX);
+	}
+	return (adaptive_sort(&p->a,
+			&p->b, p->disorder, &p->ops));
+}
 
-    ft_memset(&n_ops, 0, sizeof(t_ops));
-    a = NULL;
-    b = NULL;
-    bench = 0;
-    if (argc < 2)
-        return (0);
-    flag = get_flag(argv, &start, &bench);
-    ft_parse_args(&a, argv + start - 1);
-    if (is_sorted(a))
-        return (free_stack(&a), 0);
-    disorder = count_disorder(a);
-    used_strategy = run_sort(&a, &b, flag, disorder, &n_ops);
-    if (bench)
-        print_bench(flag, disorder, used_strategy, &n_ops);
-     // need to fix later according to what we will gonna do
-    free_stack(&a);
-    free_stack(&b);
-    return (0);
+int	main(int argc, char **argv)
+{
+	t_program	p;
+
+	if (argc < 2)
+		return (0);
+	init_program(&p);
+	p.flag = get_flag(argv, &p.start, &p.bench);
+	ft_parse_args(&p.a, argv + p.start - 1);
+	if (is_sorted(p.a))
+		return (free_stack(&p.a), 0);
+	p.disorder = count_disorder(p.a);
+	p.used = run_sort(&p);
+	if (p.bench)
+		print_bench(p.flag, p.disorder, p.used, &p.ops);
+	free_stack(&p.a);
+	free_stack(&p.b);
+	return (0);
 }

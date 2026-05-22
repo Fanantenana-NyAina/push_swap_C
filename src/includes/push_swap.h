@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/22 19:21:37 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 19:39:56 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ typedef enum e_flag
 	COMPLEX,
 	ADAPTIVE,
 }	t_flag;
+
+typedef struct s_program
+{
+	t_stack	*a;
+	t_stack	*b;
+	t_ops	ops;
+	t_flag	flag;
+	t_flag	used;
+	int		bench;
+	int		start;
+	double	disorder;
+}	t_program;
 
 typedef struct s_context
 {

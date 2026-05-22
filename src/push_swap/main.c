@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/16 19:21:55 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 08:48:19 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static int	is_sorted(t_stack *stack)
 {
@@ -42,16 +43,14 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     t_flag  flag;
     t_ops   n_ops;
     int     start;
-    int     bench;
     double  disorder;
 
-    bench = 0;
     ft_memset(&n_ops, 0, sizeof(t_ops));
     a = NULL;
     b = NULL;
     if (argc < 2)
         return (0);
-    flag = get_flag(argv, &start, bench);
+    flag = get_flag(argv, &start);
     ft_parse_args(&a, argv + start - 1);
     if (is_sorted(a))
         return (free_stack(&a), 0);
@@ -61,11 +60,12 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     else if (flag == MEDIUM)
         ft_chunk(&a, &b, &n_ops); // need to fix later according to what we will gonna do
     else if (flag == COMPLEX)
-        radix_sort(&a, &b, &n_ops); // need to fix later according to what we will gonna do
+        radix_sort(&a, &b, &n_ops);
+    else if (flag == BENCH)
+        print_bench(flag, disorder, &n_ops);
+     // need to fix later according to what we will gonna do
     else
         adaptive_sort(&a, &b, disorder, &n_ops); // need to fix later according to what we will gonna do
-    if (bench)
-        print_bench(flag, disorder, &n_ops);
     free_stack(&a);
     free_stack(&b);
     return (0);

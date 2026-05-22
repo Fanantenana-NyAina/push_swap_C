@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/16 19:48:47 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/19 08:55:08 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef enum e_flag
 	MEDIUM,
 	COMPLEX,
 	ADAPTIVE,
+	BENCH
 }	t_flag;
 
 typedef struct s_context
@@ -102,7 +103,7 @@ void	error_duplicate(void);
 void	error_malloc(void);
 void	error_flag(void);
 
-t_flag	get_flag(char **argv, int *start, int bench);
+t_flag	get_flag(char **argv, int *start);
 int		is_flag(char *str);
 
 #endif

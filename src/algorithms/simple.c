@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/17 06:47:01 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/19 08:56:57 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,12 @@ void	simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops)
 	int	size;
 	
 	size = ft_stack_size(*a);
-
-	// if (size <= 1)
-	// 	return ;
-	// if(size == 2)
-	// 	return (sort_two(a, n_ops));
-	// if (size == 3)
-	// 	return (sort_three(a, n_ops));
+	if (size <= 1)
+		return ;
+	if(size == 2)
+		return (sort_two(a, n_ops));
+	if (size == 3)
+		return (sort_three(a, n_ops));
 	while (ft_stack_size(*a) > 1)
 	{
 		bring_min_to_top(a, n_ops);

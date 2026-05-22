@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 22:53:52 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 09:33:44 by fanantenana      ###   ########.fr       */
+/*   Updated: 2026/05/22 19:27:28 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,25 @@ static void	free_stack(t_stack **stack)
 	}
 }
 
-void run_sort(t_stack **a, t_stack **b, t_flag flag, double disorder, t_ops *n_ops)
+t_flag	run_sort(t_stack **a, t_stack **b, t_flag flag, double disorder, t_ops *n_ops)
 {
-    if (flag == SIMPLE)
-        simple_selection_sort(a, b, n_ops);
-    else if (flag == MEDIUM)
-        ft_chunk(a, b, n_ops);
-    else if (flag == COMPLEX)
-        radix_sort(a, b, n_ops);
-    else
-        adaptive_sort(a, b, disorder, n_ops);
+	if (flag == SIMPLE)
+	{
+		simple_selection_sort(a, b, n_ops);
+		return (SIMPLE);
+	}
+	else if (flag == MEDIUM)
+	{
+		ft_chunk(a, b, n_ops);
+		return (MEDIUM);
+	}
+	else if (flag == COMPLEX)
+	{
+		radix_sort(a, b, n_ops);
+		return (COMPLEX);
+	}
+	else
+		return (adaptive_sort(a, b, disorder, n_ops));
 }
 
 int main(int argc, char **argv) // need to be refactor cuz it's too long i think
@@ -53,6 +62,7 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     t_stack *a;
     t_stack *b;
     t_flag  flag;
+    t_flag  used_strategy;
     t_ops   n_ops;
     int     start;
     int     bench;
@@ -69,9 +79,9 @@ int main(int argc, char **argv) // need to be refactor cuz it's too long i think
     if (is_sorted(a))
         return (free_stack(&a), 0);
     disorder = count_disorder(a);
-    run_sort(&a, &b, flag, disorder, &n_ops);
+    used_strategy = run_sort(&a, &b, flag, disorder, &n_ops);
     if (bench)
-        print_bench(flag, disorder, &n_ops);
+        print_bench(flag, disorder, used_strategy, &n_ops);
      // need to fix later according to what we will gonna do
     free_stack(&a);
     free_stack(&b);

@@ -6,7 +6,7 @@
 /*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:27:14 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/16 19:35:30 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 18:46:26 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	print_operations_r(t_ops *n_ops)
 	ft_putnbr_fd(n_ops->rrr, 2);
 }
 
-void	print_bench(t_flag flag, double disorder, t_ops *n_ops)
+void	print_bench(t_flag flag, double disorder, t_flag used_strategy,t_ops *n_ops)
 {
 	print_disorder_fd(disorder);
 	if (flag == SIMPLE)
@@ -71,8 +71,15 @@ void	print_bench(t_flag flag, double disorder, t_ops *n_ops)
 		ft_putstr_fd("[bench] strategy: Medium / O(n√n)\n", 2);
 	else if (flag == COMPLEX)
 		ft_putstr_fd("[bench] strategy: Complex / O(nlogn)\n", 2);
-	else
-		ft_putstr_fd("[bench] strategy: Adaptive\n", 2);
+	else {
+		ft_putstr_fd("[bench] strategy: Adaptive / ", 2);
+		if (used_strategy == SIMPLE)
+		ft_putstr_fd("O(n²)\n", 2);
+		else if (used_strategy == MEDIUM)
+		ft_putstr_fd("O(n√n)\n", 2);
+		else if (used_strategy == COMPLEX)
+		ft_putstr_fd("O(nlogn)\n", 2);
+	}
 	ft_putstr_fd("[bench] total_ops:    ", 2);
 	ft_putnbr_fd(total_ops(n_ops), 2);
 	write(2, "\n", 1);

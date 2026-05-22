@@ -101,8 +101,8 @@ Measured before any moves.
 
 ## Contributions
 - `tsirakot`:
-    - **feat:**
-    - **fix:**
+    - **feat:** medium, complex, operations, stack_utils
+    - **fix:** norminette
 - `fananrak`:
     - **feat**: main, parsing, bench, adaptative, simple, flags, disorder, error_handling
     - **fix:** operations, stack_utils

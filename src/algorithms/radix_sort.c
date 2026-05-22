@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 14:51:54 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/16 19:13:44 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 19:35:16 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,52 +22,6 @@ static int	get_max_bits(int size)
 	while (((size - 1) >> bits) != 0)
 		bits++;
 	return (bits);
-}
-
-void	sort_tab(int *tab, int size)
-{
-	int	i;
-	int	tmp;
-
-	if (!tab || size <= 1)
-		return ;
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i] > tab[i + 1])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			i = 0;
-		}
-		else
-			i++;
-	}
-}
-
-static void	loop_tmp(t_stack *a, int *tab, int size)
-{
-	t_stack	*tmp;
-	int		i;
-
-	if (!a || !tab || size <= 0)
-		return ;
-	tmp = a;
-	while (tmp)
-	{
-		i = 0;
-		while (i < size)
-		{
-			if (tmp->value == tab[i])
-			{
-				tmp->index = i;
-				break ;
-			}
-			i++;
-		}
-		tmp = tmp->next;
-	}
 }
 
 int	make_index(t_stack **stack_a)
@@ -107,6 +61,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_ops *n_ops)
 
 	if (!stack_a || !*stack_a)
 		return ;
+	make_index(stack_a);
 	size = ft_stack_size(*stack_a);
 	bits = get_max_bits(size);
 	i = 0;

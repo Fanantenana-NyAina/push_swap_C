@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:28:23 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/22 19:56:45 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:56:26 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error()
+void	error(void)
 {
 	write(2, "ERROR:\n", 7);
 	exit(1);

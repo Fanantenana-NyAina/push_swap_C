@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 20:02:40 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:55:28 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int    is_exact(char *str, char *flag)
+static int	is_exact(char *str, char *flag)
 {
-    return (!ft_strncmp(str, flag, ft_strlen(flag) + 1)
-        && ft_strlen(str) == ft_strlen(flag));
+	return (!ft_strncmp(str, flag, ft_strlen(flag) + 1)
+		&& ft_strlen(str) == ft_strlen(flag));
 }
 
 int	is_flag(char *str)
@@ -33,7 +33,7 @@ int	is_flag(char *str)
 	return (0);
 }
 
-t_flag	get_flag(char **argv, int *start, 	int *bench)
+t_flag	get_flag(char **argv, int *start, int *bench)
 {
 	int		i;
 	t_flag	flag;

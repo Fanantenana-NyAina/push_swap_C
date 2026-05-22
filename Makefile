@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+         #
+#    By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/16 18:56:37 by fananrak          #+#    #+#              #
-#    Updated: 2026/05/22 20:12:12 by fananrak         ###   ########.fr        #
+#    Updated: 2026/05/22 20:53:15 by tsirakot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS    = src/push_swap/main.c \
           src/algorithms/simple.c \
           src/algorithms/medium.c \
           src/algorithms/radix_sort.c \
+          src/algorithms/radix_utils.c \
           src/algorithms/adaptative.c
 OBJS    = $(SRCS:.c=.o)
 LIBFT   = libft/libft.a

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:11:30 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 19:43:45 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:55:55 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,47 +55,47 @@ static void	bring_min_to_top(t_stack **a, t_ops *n_ops)
 	}
 }
 
-static void	sort_two(t_stack**a, t_ops *n_ops)
+static void	sort_two(t_stack **a, t_ops *n_ops)
 {
 	if ((*a)->value > (*a)->next->value)
 		sa(a, n_ops);
 }
 
-static void    sort_three(t_stack **a, t_ops *n_ops)
+static void	sort_three(t_stack **a, t_ops *n_ops)
 {
-    int    top;
-    int    mid;
-    int    bot;
+	int	top;
+	int	mid;
+	int	bot;
 
-    top = (*a)->value;
-    mid = (*a)->next->value;
-    bot = (*a)->next->next->value;
-    if (top > mid && mid < bot && top < bot)
-        sa(a, n_ops);
-    else if (top > mid && mid > bot)
-    {
-        sa(a, n_ops);
-        rra(a, n_ops);
-    }
-    else if (top > mid && mid < bot && top > bot)
-        ra(a, n_ops);
-    else if (top < mid && mid > bot && top < bot)
-    {
-        sa(a, n_ops);
-        ra(a, n_ops);
-    }
-    else if (top < mid && mid > bot && top > bot)
-        rra(a, n_ops);
+	top = (*a)->value;
+	mid = (*a)->next->value;
+	bot = (*a)->next->next->value;
+	if (top > mid && mid < bot && top < bot)
+		sa(a, n_ops);
+	else if (top > mid && mid > bot)
+	{
+		sa(a, n_ops);
+		rra(a, n_ops);
+	}
+	else if (top > mid && mid < bot && top > bot)
+		ra(a, n_ops);
+	else if (top < mid && mid > bot && top < bot)
+	{
+		sa(a, n_ops);
+		ra(a, n_ops);
+	}
+	else if (top < mid && mid > bot && top > bot)
+		rra(a, n_ops);
 }
 
 void	simple_selection_sort(t_stack **a, t_stack **b, t_ops *n_ops)
 {
 	int	size;
-	
+
 	size = ft_stack_size(*a);
 	if (size <= 1)
 		return ;
-	if(size == 2)
+	if (size == 2)
 		return (sort_two(a, n_ops));
 	if (size == 3)
 		return (sort_three(a, n_ops));

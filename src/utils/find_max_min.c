@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_max_min.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:29:52 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/16 19:41:25 by fananrak         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:55:41 by tsirakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*find_min(t_stack *stack_a)
 	return (min);
 }
 
-t_stack *find_max(t_stack *stack_a)
+t_stack	*find_max(t_stack *stack_a)
 {
 	t_stack	*max;
 

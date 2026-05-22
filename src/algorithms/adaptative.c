@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptative.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsirakot <tsirakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 17:30:26 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/22 20:56:40 by tsirakot         ###   ########.fr       */
+/*   Updated: 2026/05/22 22:38:57 by fananrak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ t_flag	adaptive_sort(t_stack **a, t_stack **b, double disorder, t_ops *ops)
 	int	size;
 
 	size = ft_stack_size(*a);
-	if (size <= 5 || disorder < 20.0)
+	if (size <= 5 || disorder < 0.2)
 	{
 		simple_selection_sort(a, b, ops);
 		return (SIMPLE);
 	}
-	else if (size <= 100 || disorder < 60.0)
+	else if (size <= 100 || disorder < 0.6)
 	{
 		ft_chunk(a, b, ops);
 		return (MEDIUM);

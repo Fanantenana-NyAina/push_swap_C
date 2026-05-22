@@ -6,7 +6,7 @@
 #    By: fananrak <fananrak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/16 18:56:37 by fananrak          #+#    #+#              #
-#    Updated: 2026/05/16 19:57:45 by fananrak         ###   ########.fr        #
+#    Updated: 2026/05/22 20:12:12 by fananrak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS    = src/push_swap/main.c \
           src/operations/op_rotate.c \
           src/operations/op_rev_rotate.c \
           src/flags/get_flags.c \
-          src/Errors/free_errors.c \
+          src/Errors/error_handling.c \
           src/algorithms/simple.c \
           src/algorithms/medium.c \
           src/algorithms/radix_sort.c \

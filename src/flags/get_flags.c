@@ -6,45 +6,52 @@
 /*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 02:20:05 by fananrak          #+#    #+#             */
-/*   Updated: 2026/05/19 08:54:20 by fanantenana      ###   ########.fr       */
+/*   Updated: 2026/05/22 09:46:38 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int    is_exact(char *str, char *flag)
+{
+    return (!ft_strncmp(str, flag, ft_strlen(flag) + 1)
+        && ft_strlen(str) == ft_strlen(flag));
+}
+
 int	is_flag(char *str)
 {
-	if (!ft_strncmp(str, "--simple", 8))
+	if (is_exact(str, "--simple"))
 		return (1);
-	if (!ft_strncmp(str, "--medium", 8))
+	if (is_exact(str, "--medium"))
 		return (1);
-	if (!ft_strncmp(str, "--complex", 9))
+	if (is_exact(str, "--complex"))
 		return (1);
-	if (!ft_strncmp(str, "--adaptive", 10))
+	if (is_exact(str, "--adaptive"))
 		return (1);
-	if (!ft_strncmp(str, "--bench", 7))
+	if (is_exact(str, "--bench"))
 		return (1);
 	return (0);
 }
 
-t_flag	get_flag(char **argv, int *start)
+t_flag	get_flag(char **argv, int *start, 	int *bench)
 {
 	int		i;
 	t_flag	flag;
 
 	i = 1;
+	*bench = 0;
 	flag = ADAPTIVE;
 	while (argv[i] && is_flag(argv[i]))
 	{
-		if (!ft_strncmp(argv[i], "--simple", 8))
+		if (is_exact(argv[i], "--simple"))
 			flag = SIMPLE;
-		else if (!ft_strncmp(argv[i], "--medium", 8))
+		else if (is_exact(argv[i], "--medium"))
 			flag = MEDIUM;
-		else if (!ft_strncmp(argv[i], "--complex", 9))
+		else if (is_exact(argv[i], "--complex"))
 			flag = COMPLEX;
-		else if (!ft_strncmp(argv[i], "--bench", 7))
-			flag = BENCH;
-		else if (!ft_strncmp(argv[i], "--adaptive", 10))
+		else if (is_exact(argv[i], "--bench"))
+			*bench = 1;
+		else if (is_exact(argv[i], "--adaptive"))
 			flag = ADAPTIVE;
 		// live code : new flag count only !!
 		else

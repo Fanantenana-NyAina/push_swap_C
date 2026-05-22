@@ -6,7 +6,7 @@
 /*   By: fanantenana <fanantenana@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:33:24 by tsirakot          #+#    #+#             */
-/*   Updated: 2026/05/19 08:55:08 by fanantenana      ###   ########.fr       */
+/*   Updated: 2026/05/22 09:32:11 by fanantenana      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef enum e_flag
 	MEDIUM,
 	COMPLEX,
 	ADAPTIVE,
-	BENCH
 }	t_flag;
 
 typedef struct s_context
@@ -103,7 +102,7 @@ void	error_duplicate(void);
 void	error_malloc(void);
 void	error_flag(void);
 
-t_flag	get_flag(char **argv, int *start);
+t_flag	get_flag(char **argv, int *start, int *bench);
 int		is_flag(char *str);
 
 #endif
